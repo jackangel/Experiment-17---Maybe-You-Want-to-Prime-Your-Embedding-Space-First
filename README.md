@@ -137,7 +137,7 @@ This might suggest a few things:
 
 
 
-## (Added later - Just the Skipgram results):
+### Scenario 3: Word-Level Tokenization (`skipgram_warmup_researcher.py`)
 
 **Baseline (Random Init) Final Avg Loss:** 4.1602
 
