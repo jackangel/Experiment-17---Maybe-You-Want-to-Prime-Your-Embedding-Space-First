@@ -133,6 +133,49 @@ This might suggest a few things:
 2.  The downstream task (predicting the *first* subword of the next word) might be slightly different or easier than predicting a full word, changing the dynamics.
 3.  The hyperparameter search space was smaller; a wider search might uncover parameters that yield a larger boost.
 
+(Added later - Skipgram results):
+Baseline (Random Init) Final Avg Loss: 4.1602
+----------------------------------------
+🏆 Best Warmed-up Final Avg Loss: 2.9610
+   Achieved with parameters: {'PRETRAIN_EPOCHS': 10, 'PRETRAIN_LR': 0.005, 'WINDOW_SIZE': 5}
+   Performance Boost vs. Baseline: 28.82%
+
+--- Full Results Summary ---
+PRETRAIN_EPOCHS | PRETRAIN_LR     | WINDOW_SIZE     | Final Loss
+----------------------------------------------------------------
+10              | 0.005           | 5               | 2.9610409921643326  <-- BEST
+5               | 0.005           | 5               | 3.0207935737481404
+10              | 0.005           | 7               | 3.0446952792596327
+5               | 0.005           | 7               | 3.065512686487871
+5               | 0.01            | 5               | 3.074102272226381
+10              | 0.01            | 5               | 3.0804032612684704
+10              | 0.01            | 3               | 3.1304391226342623
+10              | 0.005           | 10              | 3.1551501436778078
+5               | 0.005           | 10              | 3.155809900945661
+5               | 0.01            | 7               | 3.185602737904293
+5               | 0.01            | 3               | 3.206088099612324
+10              | 0.01            | 7               | 3.2085226995878653
+10              | 0.005           | 3               | 3.2392935693525815
+10              | 0.01            | 10              | 3.3207756586340125
+5               | 0.01            | 10              | 3.325335318312638
+5               | 0.005           | 3               | 3.3919142531790114
+10              | 0.01            | 2               | 3.4686652797207476
+5               | 0.01            | 2               | 3.5907795851611115
+10              | 0.005           | 2               | 3.6408449901843314
+5               | 0.005           | 2               | 3.773753499216775
+10              | 0.05            | 3               | 4.123601315485785
+10              | 0.05            | 2               | 4.127443443454726
+5               | 0.05            | 3               | 4.140278255258786
+5               | 0.05            | 2               | 4.16734798202403
+5               | 0.05            | 5               | 4.209423355616378
+10              | 0.05            | 5               | 4.220276266031
+10              | 0.05            | 7               | 4.248097378547858
+5               | 0.05            | 7               | 4.254838537157542
+5               | 0.05            | 10              | 4.279299834462245
+10              | 0.05            | 10              | 4.2867768798705255
+----------------------------------------
+
+
 ## Conclusion
 
 So, should you prime your embedding space first? **Maybe.**
